@@ -1,4 +1,5 @@
 import { useState } from "react";
+import OutPut from "./OutPut";
 
 const Greeting = () => {
   const [changeText, setChangeText] = useState(false);
@@ -10,8 +11,8 @@ const Greeting = () => {
   return (
     <div>
       <h2>Hello World!</h2>
-     <p>Good to see You</p>
-      {changeText && <p>Changed!</p>}
+     {!changeText && <OutPut>Good to see You</OutPut>}
+      {changeText && <OutPut>Changed!</OutPut>}
       <button onClick={textChangeHandler}>Change_Text!</button>
     </div>
   );
